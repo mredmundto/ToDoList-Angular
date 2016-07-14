@@ -1,20 +1,18 @@
 <div ng-controller="addController">
-    <section class="info">
+    <div class="info">
       <form name="myform">
-        <h3> Enter item Details </h3>
-        <p> Item
-          <input type="text" placeholder="Enter here" ng-model="item">
-        </p>
-        <button ng-click="submit(item)">Submit</button>
-         <button ng-click="testingAPI()">Testing GET API</button>
+        <h3> Enter picture details </h3>
+          <input type="text" placeholder="Title here" ng-model="title">
+          <input type="text" placeholder="Link here" ng-model="link">
+          <button ng-click="submit(title, link)">Save image</button>  
       </form>
-
+           <button ng-click="testingAPI()">Testing GET API</button>
+      </div>
+      <img src = "{{ currentPic }}">   
       <ul>
-        <li ng-repeat="item in items track by $index" ng-click="remove($index)">
-        {{ item }}
+        <li ng-repeat="item in items track by $index" ng-click="changePic($index)" >
+        {{ item.title }}
+        <button ng-click="remove($index)">remove</button>
         </li>
       </ul>
-
-    </section>
-   
 </div>

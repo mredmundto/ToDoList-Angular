@@ -1,14 +1,18 @@
-/* Styles go here */
-.info-container {
-  text-align:center;
-}
 .info {
 	  vertical-align:top;
   	display:inline-block;
   	border: 1px solid black;
-	border-radius: 10px;
 	margin: 15px;
-	padding: 0 5px 15px 5px;
-	width: 40%;
+	padding: 10px 10px 10px 10px ;
+	width: 90%;
 	float: center;
+}
+
+img {
+	float:right;
+    height: auto; 
+    width: auto; 
+    padding: 10px 10px 10px 10px ;
+    max-width: 300px; 
+    max-height: 300px;
 }
