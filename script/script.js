@@ -15,12 +15,13 @@ angular.module('toDoList', ['ngRoute'])
 }) 
 .controller('addController', function($scope, $http, addViewFactory) {
   
-  $scope.items = []; 
+  //$scope.items = []; 
+  $scope.items = addViewFactory.getData(); 
 
   $scope.submit = function(newItem){
-    $scope.items.push(newItem); 
+    //$scope.items.push(newItem); 
     addViewFactory.setItem(newItem); 
-    console.log($scope.items);
+    console.log(addViewFactory.getData());
   };
   
   $scope.testingAPI = function(){
@@ -36,8 +37,8 @@ angular.module('toDoList', ['ngRoute'])
   });
 
   $scope.remove = function(index) {
-    $scope.items.splice(index, 1);
-    addViewFactory.removeItem(); 
+    //$scope.items.splice(index, 1);
+    addViewFactory.removeItem(index); 
   };
 })
 
@@ -54,8 +55,8 @@ angular.module('toDoList', ['ngRoute'])
     setItem: function(item){
       items.push(item); 
     }, 
-    removeItem: function(){
-      items.pop(); 
+    removeItem: function(index){
+      items.splice(index, 1); 
     },
     getData: function(){
       return items; 
