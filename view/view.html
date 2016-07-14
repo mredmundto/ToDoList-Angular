@@ -1,0 +1,10 @@
+<body>
+<div ng-controller="viewController">
+   <section class="info">
+    <h3> Displaying my to do list</h3>
+
+    <li ng-repeat="item in items track by $index" ng-click="remove($index)">
+    {{ item }}</li>
+   </section>
+</div>
+</body>
